@@ -1,6 +1,6 @@
-var repl = require('repl');
-var con = repl.start(">").context;
-con.msg = "事例消息";
-con.testFunction = function() {
-	console.log(con.msg)
-}
+var fs = require('fs');
+var data = new Buffer('123456');
+fs.writeFile('./message.txt',data,function(err) {
+	if(err) console.log('写文件操作失败');
+	else console.log('写文件操作成功');
+});
