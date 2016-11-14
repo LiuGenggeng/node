@@ -1,4 +1,4 @@
-客户端请求所用的方法为:POST
-客户端请求所用的url字符串为:/
-客户端请求头对象为:{"host":"localhost:1334","connection":"keep-alive","content-length":"30","cache-control":"max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8","origin":"null","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36","content-type":"application/x-www-form-urlencoded","accept-encoding":"gzip, deflate","accept-language":"zh-CN,zh;q=0.8,en;q=0.6"}
+客户端请求所用的方法为:GET
+客户端请求所用的url字符串为:/gjvgvgvghvg'
+客户端请求头对象为:{"host":"localhost:1334","connection":"keep-alive","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36","accept-encoding":"gzip, deflate, sdch","accept-language":"zh-CN,zh;q=0.8,en;q=0.6"}
 客户端请求所用HTTP版本为:1.1

@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+var url = require('url');
 var server = http.createServer(function(req,res) {
 	if(req.url !== "/favicon.ico") {
 		var out = fs.createWriteStream('./request.log');
@@ -14,6 +15,16 @@ var server = http.createServer(function(req,res) {
 		req.on('end',function() {
 			console.log('客户端请求数据已全部接收完毕')
 		});
+		res.write('<html><head><meta charset="utf-8"/></head>');
+		var url_parts = url.parse(req.url);
+		switch(url_parts.pathname) {
+			case './':
+			case './index.html':
+				res.write('<body>首页</body></html>');
+				break;
+			default:
+				res.write('<body>当前访问页面为:' + url_parts.pathname + '.</body></html>');
+		}
 	}
 	res.end();
 }).listen(1334,'127.0.0.1');
