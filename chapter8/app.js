@@ -32,8 +32,18 @@ var server = http.createServer(function(req,res) {
 		// res.setHeader('Content-Type','text/html');
 		// res.write('<html><head><meta charset="utf-8"/></head>');
 		// res.write('你好');
+		req.on('data',function(data) {
+			console.log('服务端已经接收到数据:' + data);
+			res.write('确认数据:' + data);
+		});
+		req.on('end',function() {
+			res.addTrailers({'Content-MD5':'789bf4b8828b55ceaf47747b4bbca667'});
+			res.end();
+		});
 	}
-	res.end();
+	res.on('end',function() {
+		res.end()
+	})
 }).listen(1334,'127.0.0.1');
 server.on('listening',function() {
 	console.log('开始监听');
