@@ -56,6 +56,8 @@ server.on('close',function() {
 });
 server.on('error',function(e) {
 	if(e.code == 'EADDRINUSE') {
+
+		
 		console.log('服务器地址以及端口已经被占用');
 	}
 });
