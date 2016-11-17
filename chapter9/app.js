@@ -35,3 +35,4 @@ file.on('data',function(data) {
 	console.log("从中国足球和西方足球的差异.docx文件中读取到%d字节",data.length);
 })
 foo()
+//添加多个进程
