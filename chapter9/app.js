@@ -20,6 +20,7 @@
 // }
 // process.nextTick(foo);
 // console.log('bar');
+<<<<<<< HEAD
 // var fs = require('fs');
 // function foo() {
 // 	function beginAnotherTask() {
@@ -50,3 +51,21 @@ var net = require('net');
 var http = require('http');
 console.log(net);
 console.log(http);
+=======
+var fs = require('fs');
+function foo() {
+	function beginAnotherTask() {
+		var file = fs.createReadStream('./中国足球和西方足球的差异.docx');
+		file.on('data',function(data) {
+			console.log('读取到%d 字节',data.length);
+		})
+	}
+	process.nextTick(beginAnotherTask);
+}
+var file = fs.createReadStream('./中国足球和西方足球的差异.docx');
+file.on('data',function(data) {
+	console.log("从中国足球和西方足球的差异.docx文件中读取到%d字节",data.length);
+})
+foo()
+//添加多个进程
+>>>>>>> ff540791a63209b2b6f93f546206e58575e9decb
