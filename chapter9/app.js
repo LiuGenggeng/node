@@ -20,18 +20,33 @@
 // }
 // process.nextTick(foo);
 // console.log('bar');
-var fs = require('fs');
-function foo() {
-	function beginAnotherTask() {
-		var file = fs.createReadStream('./中国足球和西方足球的差异.docx');
-		file.on('data',function(data) {
-			console.log('读取到%d 字节',data.length);
-		})
-	}
-	process.nextTick(beginAnotherTask);
-}
-var file = fs.createReadStream('./中国足球和西方足球的差异.docx');
-file.on('data',function(data) {
-	console.log("从中国足球和西方足球的差异.docx文件中读取到%d字节",data.length);
-})
-foo()
+// var fs = require('fs');
+// function foo() {
+// 	function beginAnotherTask() {
+// 		var file = fs.createReadStream('./中国足球和西方足球的差异.docx');
+// 		file.on('data',function(data) {
+// 			console.log('读取到%d 字节',data.length);
+// 		})
+// 	}
+// 	process.nextTick(beginAnotherTask);
+// }
+// var file = fs.createReadStream('./中国足球和西方足球的差异.docx');
+// file.on('data',function(data) {
+// 	console.log("从中国足球和西方足球的差异.docx文件中读取到%d字节",data.length);
+// })
+// foo();
+//使用fork方法开启子进程
+// var cp = require('child_process');
+// var n = cp.fork('./test.js');
+// n.on('message',function(m) {
+// 	console.log('父进程接收到数据:' , m);
+	
+// });
+// n.send({username:'刘庚'});//在父进程中向子进程发送消息
+// setTimeout(function() {
+// 	process.exit()
+// },4000);
+var net = require('net');
+var http = require('http');
+console.log(net);
+console.log(http);
