@@ -3,7 +3,7 @@ var fs = require('fs');
 var app = express();
 app.use(express.bodyParser());
 app.get('/index.html',function(req,res) {
-	res.sendfile(__dirname + 'index.html');
+	res.sendfile(__dirname + '/index.html');
 });
 app.post('/index.html',function(req,res) {
 	var file = req.files.myfile;

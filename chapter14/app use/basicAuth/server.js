@@ -1,9 +1,6 @@
 var express = require('express');
-var basicAuth = require('basic-auth');
 var app = express();
-app.use(basicAuth(function(user,pass) {
-	return user === 'testUser' && pass === 'testPass';
-}));
+app.use(express.basicAuth('testUser','testPass'));
 app.get('/',function(req,res) {
 	res.send("你好");
 })

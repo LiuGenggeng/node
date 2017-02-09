@@ -18,7 +18,7 @@
 		var file = files[0];
 		formData.append('myfile',file);
 		var xhr = new XMLHttprequest();
-		xhr.open('POST','index.html',true);
+		xhr.open('POST','/index.html',true);
 		xhr.onload = function(e) {
 			if(this.status == 200) {
 				document.getElementById('result').innerHtml = this.response
